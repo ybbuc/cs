@@ -1,0 +1,150 @@
+\documentclass[aspectratio=169]{beamer}
+% Themes ---------------------------------------------------------------------
+\usetheme{default}
+\usefonttheme{professionalfonts}
+% Packages -------------------------------------------------------------------
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{stmaryrd}
+\usepackage[most]{tcolorbox}
+\usepackage{booktabs}
+\usepackage{import}
+\usepackage{adjustbox}
+\usepackage{MnSymbol}
+\usepackage{fancyvrb}
+% Tables ---------------------------------------------------------------------
+\renewcommand{\arraystretch}{1.3}
+% enumitem -------------------------------------------------------------------
+\setlist{itemsep=10pt}
+% beamer ---------------------------------------------------------------------
+\setbeamerfont{caption}{size=\small}
+% Title & author -------------------------------------------------------------
+\title{1.3 Running a Hello World Program}
+\subtitle{Getting Started}
+\author{Jakob Wells}
+
+\begin{document}
+\date{\today}
+
+
+\begin{frame}
+    \titlepage{}
+\end{frame}
+
+
+\begin{frame}[fragile]{Running \texttt{hello\_world.py} (I)}
+    Before you write your first program, make a folder called \texttt{python\_work} somewhere on your system for your projects. \\
+    \vspace{15pt}
+    It's best to use lowercase letters and underscores for spaces in file and folder names, because Python uses these naming conventions.\\
+    \vspace{15pt}
+    Open Visual Studio Code, and save an empty Python file (\textbf{File} \(\blacktriangleright\) \textbf{Save As}) called \texttt{hello\_world.py} in your \texttt{python\_work} folder. \\
+\end{frame}
+
+
+\begin{frame}[fragile]{Running \texttt{hello\_world.py} (II)}
+    The extension \texttt{.py} tells Visual Studio Code that the code in your file is written in Python, which tells it how to run the program and highlight the text in a helpful way. \\
+    \vspace{15pt}
+    After you've saved your file, enter the following line in the text editor:
+    \vspace{5pt}
+    \begin{Verbatim}[fontsize=\footnotesize]
+print("Hello Python world!")
+    \end{Verbatim}
+    \vspace{15pt}
+    You can run your program by selecting \textbf{Run} \(\blacktriangleright\) \textbf{Run Without Debugging} in the menu or by pressing \texttt{CTRL-F5}. \\
+\end{frame}
+
+
+\begin{frame}[fragile]{Running \texttt{hello\_world.py} (III)}
+    A terminal screen should appear at the bottom of the Visual Studio code window showing the following output:
+    \vspace{5pt}
+    \begin{Verbatim}[fontsize=\footnotesize]
+Hello Python world!
+[Finished in 0.1s]
+    \end{Verbatim}
+    \vspace{15pt}
+    If you don't see this output, something might have gone wrong in your program.
+        \begin{itemize}[label=\(\blacktriangleright\),itemsep=5pt]
+            \item Check every character on the line you entered.
+            \item Did you accidentally capitalize \texttt{print}?
+            \item Did you forget one of the quotation marks or parentheses?\\
+        \end{itemize}
+    \vspace{15pt}
+    Programming languages expect very specific syntax, and if you don't provide that, you'll get errors.
+\end{frame}
+
+
+\begin{frame}[fragile]{Running Python programs from a terminal}{On Windows}
+    You can use the terminal command \texttt{cd}, for \textit{change directory}, to navigate through your filesystem in a command window.
+    The command \texttt{dir}, for \textit{directory}, shows you all the files that exist in the current directory. \\
+    \vspace{10pt}
+    Open a new terminal window and enter the following commands to run \textit{hello\_world.py}:
+    \vspace{5pt}
+    \begin{Verbatim}[fontsize=\footnotesize]
+C:\> cd Desktop\python_work
+C:\Desktop\python_work> dir
+hello_world.py
+C:\Desktop\python_work> python hello_world.py
+Hello Python world!
+    \end{Verbatim}
+    \vspace{10pt}
+    Most of your programs will run fine directly from your editor.
+    But as your work becomes more complex, you'll want to run some of your programs from a terminal.
+\end{frame}
+
+
+\begin{frame}[fragile]{Running Python programs from a terminal}{On macOS}
+    You can use the terminal command \texttt{cd}, for \textit{change directory}, to navigate through your filesystem in a terminal session.
+    The command \texttt{ls}, for \textit{list}, shows you all the nonhidden files that exist in the current directory. \\
+    \vspace{10pt}
+    Open a new terminal window and enter the following commands to run \textit{hello\_world.py}:
+    \vspace{5pt}
+    \begin{Verbatim}[fontsize=\footnotesize]
+~$ cd Desktop/python_work/
+~/Desktop/python_work$ ls
+hello_world.py
+~/Desktop/python_work$ python hello_world.py
+Hello Python world!
+    \end{Verbatim}
+    \vspace{10pt}
+    It's that simple.
+    You just use the \texttt{python3} command to run Python programs.
+\end{frame}
+
+
+\begin{frame}[fragile]{What really happens when you run \texttt{hello\_world.py} (I)}
+    As it turns out, Python does a fair amount of work, even when it runs a simple program like the one contained in \texttt{hello\_world.py}:
+    \vspace{5pt}
+    \begin{Verbatim}[fontsize=\footnotesize]
+print("Hello Python world!") 
+    \end{Verbatim}
+    \vspace{15pt}
+    When you run this code, you should see this output:
+    \vspace{5pt}
+    \begin{Verbatim}[fontsize=\footnotesize]
+Hello Python world!
+    \end{Verbatim}
+    \vspace{15pt}
+    When you run the file \texttt{hello\_world.py}, the ending \texttt{.py} indicates that the file is a Python program. \\
+\end{frame}
+
+
+\begin{frame}[fragile]{What really happens when you run \texttt{hello\_world.py} (II)}
+    Your editor then runs the file through the \textit{Python interpreter}, which reads through the program and determines what each word in the program means. \\
+    \vspace{15pt}
+    For example, when the interpreter sees the word \texttt{print} followed by parentheses, it prints to the screen whatever is inside the parentheses. \\
+\end{frame}
+
+
+\begin{frame}{Syntax highlighting}
+ 
+    As you write your programs, your editor highlights different parts of your program in different ways. \\
+    \vspace{15pt}
+    For example, it recognizes that \texttt{print()} is the name of a function and displays that word in one color.
+    \vspace{15pt}
+    It recognizes that \texttt{"Hello Python world!"} is not Python code and displays that phrase in a different color. \\
+    \vspace{15pt}
+    This feature is called \textit{syntax highlighting} and is quite useful as you start to write your own programs.
+\end{frame}
+
+
+\end{document}
