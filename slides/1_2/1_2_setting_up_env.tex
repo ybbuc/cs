@@ -32,63 +32,16 @@
 \end{frame}
 
 
-\begin{frame}[fragile]{Python on Windows}
-    \begin{itemize}[label=--]
-        \item Windows doesn't always come with Python, so you'll probably need to install it, and then install \href{https://code.visualstudio.com/Download}{Visual Studio Code}. \\
-        \item First, check whether Python is installed on your system.
-            \begin{enumerate}[label={\arabic*.},itemsep=5pt]
-                \item Open a command window by entering \textbf{command} into the Start menu or by holding down the \texttt{SHIFT} key while right-clicking on your desktop and selecting \textbf{Open command window here} from the menu.
-                \item In the terminal window, enter \textbf{python} in lowercase.
-            \end{enumerate}
-        \item If you get a Python prompt (\verb|>>>|) in response, Python is installed on your system.
-        \item If you see an error message telling you that python is not a recognized command, Python isn’t installed.
-    \end{itemize}
-\end{frame}
-
-
-\begin{frame}{Installing Python}
-    If Python isn't installed, or if you see a version of Python earlier than Python 3.6, you need to download a Python installer for Windows
+\begin{frame}[fragile]{Installing Visual Studio Code}
+    Download the installer at \href{https://code.visualstudio.com/}{https://code.visualstudio.com/}. \\
+    \vspace{10pt}
+    \textbf{On macOS} \\
     \begin{enumerate}[label={\arabic*.},itemsep=5pt]
-        \item Go to \href{https://python.org/}{https://python.org/} and hover over the \textbf{Downloads} link.
-        \item You should see a button for downloading the latest version of Python.
-            Click the button, which should automatically start downloading the correct installer for your system.
-        \item After you've downloaded the file, run the installer.
-            Make sure you select the option \textbf{Add Python to PATH}, which will make it easier to configure your system correctly.
+        \item Click the \textbf{Download} link and look for an installer for macOS.
+        \item After the file downloads, open it and then drag the Visual Studio Code icon into your \textit{Applications} folder.
     \end{enumerate}
-\end{frame}
-
-
-\begin{frame}[fragile]{Running Python in a terminal session (I)}
-    Open a command window and enter \textbf{python} in lowercase.
-    You should see a Python prompt (\verb|>>>|), which means Windows has found the version of Python you just installed.
     \vspace{10pt}
-    \begin{Verbatim}[fontsize=\footnotesize]
-C:\> python
-Python 3.7.2 (v3.7.2, Dec 23 2018, 23:09:28) [MSC v.1916 64 bit (AMD64)] on win32
-Type "help", "copyright", "credits" or "license" for more information.
->>>
-    \end{Verbatim}
-    \vspace{10pt}
-    Enter the following line in your Python session, and make sure you see the output \texttt{Hello Python interpreter!}
-    \vspace{10pt}
-    \begin{Verbatim}[fontsize=\footnotesize]
->>> print("Hello Python interpreter!")
-Hello Python interpreter!
->>>
-    \end{Verbatim}
-\end{frame}
-
-
-\begin{frame}[fragile]{Running Python in a terminal session (II)}
-    Any time you want to run a snippet of Python code, open a command window and start a Python terminal session. \\
-    \vspace{10pt}
-    To close the terminal session, press \texttt{CTRL-Z} and then press \texttt{ENTER}, or enter the command \texttt{exit()}.
-\end{frame}
-
-
-\begin{frame}[fragile]{Installing Visual Studio Code}{On Windows}
-    You can download an installer for Visual Studio Code at \href{https://code.visualstudio.com/}{https://code.visualstudio.com/}.
-    \vspace{10pt}
+    \textbf{On Windows} \\
     \begin{enumerate}[label={\arabic*.},itemsep=5pt]
         \item Click the download link and look for the Windows installer.
         \item After downloading the installer, run the installer and accept all of its defaults.
@@ -96,21 +49,14 @@ Hello Python interpreter!
 \end{frame}
 
 
-\begin{frame}{Installing Git}{on Windows}
-    To install the latest version of Git, you need to download the installer at \href{https://git-scm.com/download/mac}{https://git-scm.com/download/mac}. \\
+\begin{frame}[fragile]{Installing Visual Studio Code extensions}
+    \textbf{View} \(\blacktriangleright\) \textbf{Extensions} \(\blacktriangleright\) \textbf{Search Extensions in Marketplace} \\
+    \vspace{15pt}
+    \textit{Python} \\
+    \href{https://marketplace.visualstudio.com/items?itemName=ms-python.python}{https://marketplace.visualstudio.com/items?itemName=ms-python.python} \\
     \vspace{10pt}
-    After the installer downloads, open it and then run the installer with the defaults.
-\end{frame}
-
-
-\begin{frame}[fragile]{Installing Tower}{On Windows}
-    You can download an installer for Tower at \href{https://www.git-tower.com/windows}{https://www.git-tower.com/windows}.
-    \vspace{10pt}
-    \begin{enumerate}[label={\arabic*.},itemsep=5pt]
-        \item Click the \textbf{Get Started - It's Free} link.
-            The download should begin automatically.
-        \item After downloading the installer, run the installer and accept all of its defaults.
-    \end{enumerate}
+    \textit{Pylance} \\
+    \href{https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance}{https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance}
 \end{frame}
 
 
@@ -160,7 +106,7 @@ Type "help", "copyright", "credits", or "license" for more information.
     \vspace{10pt}
     When you're finished, enter the following at a terminal prompt:
     \vspace{10pt}
-    \begin{Verbatim}[fontsize=\footnotesize]
+    \begin{Verbatim}
 $ python3 --version
 3.10.6
 >>>
@@ -172,7 +118,7 @@ $ python3 --version
     You can now try running snippets of Python code by opening a terminal session and typing \textbf{python3}.
     Enter the following line in the terminal session:\\
     \vspace{10pt}
-    \begin{Verbatim}[fontsize=\footnotesize]
+    \begin{Verbatim}
 >>> print("Hello Python interpreter!")
 Hello Python interpreter!
 >>>
@@ -183,47 +129,142 @@ Hello Python interpreter!
 \end{frame}
 
 
-\begin{frame}[fragile]{Installing Visual Studio Code}{On macOS}
-    To install the Visual Studio Code editor, you need to download the installer at \href{https://code.visualstudio.com/}{https://code.visualstudio.com/}.
+\begin{frame}[fragile]{Python on Windows}
+    Windows doesn't always come with Python, so you'll probably need to install it, and then install \href{https://code.visualstudio.com/Download}{Visual Studio Code}. \\
+    \vspace{10pt}
+    First, check whether Python is installed on your system. \\
+    \vspace{10pt}
+        \begin{enumerate}[label={\arabic*.},itemsep=5pt]
+            \item Open a command window by entering \textbf{command} into the Start menu or by holding down the \texttt{SHIFT} key while right-clicking on your desktop and selecting \textbf{Open command window here} from the menu.
+            \item In the terminal window, enter \textbf{python} in lowercase.
+        \end{enumerate}
+    \vspace{10pt}
+    If you get a Python prompt (\verb|>>>|) in response, Python is installed on your system.\\
+    \vspace{10pt}
+    If you see an error message telling you that \texttt{python} is not a recognized command, Python isn’t installed.
+\end{frame}
+
+
+\begin{frame}{Installing Python}{On Windows}
+    If Python isn't installed, or if you see a version of Python earlier than Python 3.6, you need to download a Python installer for Windows
     \vspace{10pt}
     \begin{enumerate}[label={\arabic*.},itemsep=5pt]
-        \item Click the \textbf{Download} link and look for an installer for macOS.
-        \item After the installer downloads, open it and then drag the Visual Studio Code icon into your \textit{Applications} folder.
+        \item Go to \href{https://python.org/}{https://python.org/} and hover over the \textbf{Downloads} link.
+        \item You should see a button for downloading the latest version of Python.
+            Click the button, which should automatically start downloading the correct installer for your system.
+        \item After you've downloaded the file, run the installer.
+            Make sure you select the option \textbf{Add Python to PATH}, which will make it easier to configure your system correctly.
     \end{enumerate}
 \end{frame}
 
 
-\begin{frame}{Installing Git}{On macOS}
-    To install the latest version of Git, you need to download the installer at \href{https://git-scm.com/download/mac}{https://git-scm.com/download/mac}. \\
+\begin{frame}[fragile]{Running Python in a terminal session (I)}{On Windows}
+    Open a command window and enter \textbf{python} in lowercase.
+    You should see a Python prompt (\verb|>>>|), which means Windows has found the version of Python you just installed.
     \vspace{10pt}
-    After the installer downloads, open it and then run the installer with the defaults.
-\end{frame}
-
-
-\begin{frame}[fragile]{Installing Tower}{On macOS}
-    You can download an installer for Tower at \href{https://www.git-tower.com/mac}{https://www.git-tower.com/mac}.
-    \vspace{10pt}
-    \begin{enumerate}[label={\arabic*.},itemsep=5pt]
-        \item Click the \textbf{Get Started - It's Free} link.
-            The download should begin automatically.
-        \item After the installer downloads, open it and then drag the Tower icon into your \textit{Applications} folder.
-    \end{enumerate}
-\end{frame}
-
-
-\begin{frame}[fragile]{Installing Visual Studio Code extensions}{On macOS and Windows}
     \begin{Verbatim}[fontsize=\footnotesize]
-                    ___           ___           ___     
-     _____         /\__\         /\  \         /\  \    
-    /::\  \       /:/ _/_       |::\  \       /::\  \   
-   /:/\:\  \     /:/ /\__\      |:|:\  \     /:/\:\  \  
-  /:/  \:\__\   /:/ /:/ _/_   __|:|\:\  \   /:/  \:\  \ 
- /:/__/ \:|__| /:/_/:/ /\__\ /::::|_\:\__\ /:/__/ \:\__\
- \:\  \ /:/  / \:\/:/ /:/  / \:\~~\  \/__/ \:\  \ /:/  /
-  \:\  /:/  /   \::/_/:/  /   \:\  \        \:\  /:/  / 
-   \:\/:/  /     \:\/:/  /     \:\  \        \:\/:/  /  
-    \::/  /       \::/  /       \:\__\        \::/  /   
-     \/__/         \/__/         \/__/         \/__/    
+C:\> python
+Python 3.7.2 (v3.7.2, Dec 23 2018, 23:09:28) [MSC v.1916 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>>
+    \end{Verbatim}
+    \vspace{10pt}
+    Enter the following line in your Python session, and make sure you see the output \texttt{Hello Python interpreter!}
+    \vspace{10pt}
+    \begin{Verbatim}[fontsize=\footnotesize]
+>>> print("Hello Python interpreter!")
+Hello Python interpreter!
+>>>
     \end{Verbatim}
 \end{frame}
+
+
+\begin{frame}[fragile]{Running Python in a terminal session (II)}{On Windows}
+    Any time you want to run a snippet of Python code, open a command window and start a Python terminal session. \\
+    \vspace{10pt}
+    To close the terminal session, press \texttt{CTRL-Z} and then press \texttt{ENTER}, or enter the command \texttt{exit()}.
+\end{frame}
+
+
+% \begin{frame}{Installing Git}
+%     \textbf{On macOS} \\
+%     To install the latest version of Git, you need to download the installer at \href{https://git-scm.com/download/mac}{https://git-scm.com/download/mac}. \\
+%     \vspace{10pt}
+%     After the installer downloads, open it and then run the installer with the defaults. \\
+%     \vspace{20pt}
+%     \textbf{On Windows} \\
+%     To install the latest version of Git, you need to download the installer at \href{https://git-scm.com/download/windows}{https://git-scm.com/download/windows}. \\
+%     \vspace{10pt}
+%     After the installer downloads, open it and then run the installer with the defaults.
+% \end{frame}
+
+
+\begin{frame}[fragile]{Installing Tower}
+    \begin{enumerate}[label={\arabic*.},itemsep=5pt]
+        \item Download an installer for Tower at \href{https://www.git-tower.com/}{https://www.git-tower.com/}. \\
+        \item Click the \textbf{Get Started - It's Free} button.
+            The download should begin automatically.
+    \end{enumerate}
+    \vspace{10pt}
+    \textbf{On macOS} \\
+        After the file downloads, open it and then drag the Tower icon into your \textit{Applications} folder. \\
+    \vspace{20pt}
+    \textbf{On Windows} \\
+        After downloading the installer run the installer and accept all of its defaults.
+        Make sure to choose \textbf{Extract} when asked about installing the embedded git.
+\end{frame}
+
+
+\begin{frame}{Installing embedded git}{On Windows}
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+            \centering
+            \includegraphics[width=\linewidth]{extract_embedded_git.png}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+
+\begin{frame}{Registering Tower}{On Windows}
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+            \centering
+            \includegraphics[width=\linewidth]{tower_welcome.png}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \centering
+            \includegraphics[width=\linewidth]{tower_register.png}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+
+\begin{frame}{Configuring git}{On Windows}
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+            \centering
+            \includegraphics[width=\linewidth]{choose_your_appearance.png}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \centering
+            \includegraphics[width=\linewidth]{configure_git.png}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+
+\begin{frame}{Getting started}{On Windows}
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+            \centering
+            \includegraphics[width=\linewidth]{diff_merge_tools.png}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \centering
+            \includegraphics[width=\linewidth]{get_started.png}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+
 \end{document}
