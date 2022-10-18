@@ -1,0 +1,329 @@
+\documentclass[aspectratio=169]{beamer}
+% Themes ---------------------------------------------------------------------
+\usetheme{default}
+\usefonttheme{professionalfonts}
+% Packages -------------------------------------------------------------------
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{stmaryrd}
+\usepackage[most]{tcolorbox}
+\usepackage{booktabs}
+\usepackage{import}
+\usepackage{adjustbox}
+\usepackage{MnSymbol}
+\usepackage{fancyvrb}
+% Tables ---------------------------------------------------------------------
+\renewcommand{\arraystretch}{1.3}
+% enumitem -------------------------------------------------------------------
+\setlist{itemsep=10pt}
+% beamer ---------------------------------------------------------------------
+\setbeamerfont{caption}{size=\small}
+% Title & author -------------------------------------------------------------
+\title{2.2 Strings}
+\subtitle{Variables and Simple Data Types}
+\author{Jakob Wells}
+
+\begin{document}
+\date{\today}
+
+
+\begin{frame}
+    \titlepage{}
+\end{frame}
+
+
+\begin{frame}[fragile]{Strings}
+    A \textbf{string} is a series of characters.
+    Anything inside quotes is considered a string in Python, and we can use single or double quotes around our strings like this:
+    \vspace{10pt}
+    \begin{Verbatim}
+"This is a string."
+'This is also a string.'
+    \end{Verbatim}
+    \vspace{25pt}
+    \uncover<2->{This flexibility allows us to use quotes and apostrophes within our strings: \\
+    \vspace{10pt}
+    \texttt{
+'I told my friend, "Python is my favorite language!"' \\
+"The language 'Python' is named after Monty Python, not the snake." \\
+"One of Python's strengths is its diverse and supportive community."
+}}
+\end{frame}
+
+
+\begin{frame}[fragile]{Changing case in a string with methods (I)}
+    \begin{Verbatim}
+name = "ada lovelace"
+print(name.title())
+    \end{Verbatim}
+    \vspace{15pt}
+    Save this file as \textit{name.py}, and then run it. \\
+    \vspace{25pt}
+    \begin{itemize}[label=--]
+        \uncover<2->{\item In this example, the variable \texttt{name} refers to the lowercase string \texttt{"ada lovelace"}.}
+        \uncover<3->{\item The method \texttt{title()} appears after the variable in the \texttt{print()} call.}
+        \uncover<4->{\item A \textbf{method} is an action that Python can perform on a piece of data.}
+        \uncover<5->{\item The dot (\texttt{.}) after \texttt{name} in \texttt{name.title()} tells Python to make the \texttt{title()} method act on the variable \texttt{name}.}
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame}{Changing case in a string with methods (II)}
+    \begin{itemize}[label=--]
+        \item Every method is followed by a set of parentheses, because methods often need additional information to do their work.
+        \item The \texttt{title()} function doesn't need any additional information, so its parentheses are empty.
+        \item The \texttt{title()} method changes each work to title case, where each word begins with a capital letter.
+        \item This is useful because you'll often want to think of a name as a piece of information.
+        \item For example, you might want your program to recognize the input values \texttt{Ada}, \texttt{ADA}, and \texttt{ada} as the same name, and display all of them as \texttt{Ada}.
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame}[fragile]{Changing case in a string with methods (III)}
+    Several other methods are available for dealing with case.
+    For example, you can change a string to all uppercase or all lowercase letters like this:
+    \vspace{10pt}
+    \begin{Verbatim}
+name = "Ada Lovelace"
+print(name.upper())
+print(name.lower())
+    \end{Verbatim}
+    \vspace{15pt}
+    This will display the following:
+    \vspace{10pt}
+    \begin{Verbatim}
+ADA LOVELACE
+ada lovelace
+    \end{Verbatim}
+\end{frame}
+
+
+\begin{frame}{\texttt{lower()}}
+    \begin{itemize}[label=--]
+        \item The \texttt{lower()} method is particularly useful for storing data.
+        \item Many times you won't want to trust the capitalization that your users provide, so you'll convert strings to lowercase before storing them.
+        \item When you want to display the information, just use the case you want.
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame}[fragile]{Using variables in strings (I)}
+    You might want two variables to represent a first name and last name, and then want to combine those values to display someone's full name:
+    \vspace{10pt}
+    \begin{Verbatim}
+first_name = "ada"
+last_name = "lovelace"
+full_name = f"{first_name} {last_name}"
+print(full_name)
+    \end{Verbatim}
+    \vspace{25pt}
+    To insert a variable's value into a string, place the letter \texttt{f} immediately before the opening quotation mark.
+    These strings are called \textbf{f-strings}.
+\end{frame}
+
+
+\begin{frame}[fragile]{Using variables in strings (II)}
+    You can use f-strings to create complete messages using the information associated with a variable, as shown here:
+    \vspace{10pt}
+    \begin{Verbatim}
+first_name = "ada"
+last_name = "lovelace"
+full_name = f"{first_name} {last_name}"
+print(f"Hello, {full_name.title()}!")
+    \end{Verbatim}
+\end{frame}
+
+
+\begin{frame}[fragile]{Using variables in strings (III)}
+    You can also use f-strings to compose a message, and then assign the entire message to a variable:
+    \vspace{10pt}
+    \begin{Verbatim}
+first_name = "ada"
+last_name = "lovelace"
+full_name = f"{first_name} {last_name}"
+message = f"Hello, {full_name.title()}!"
+print(message)
+    \end{Verbatim}
+    \vspace{25pt}
+    This makes the final \texttt{print()} call much simpler.
+\end{frame}
+
+
+\begin{frame}[fragile]{Adding whitespace to strings with tabs or newlines (I)}{tab}
+    \begin{itemize}[label=--]
+        \item In programming, \textbf{whitespace} refers to any nonprinting character, such as spaces, tabs, and end-of-line symbols.
+        \item You can use whitespace to organize your output so it's easier for users to read.
+    \end{itemize}
+    \vspace{15pt}
+    To add a tab  to your text, use the character combination \verb|\t|:
+    \vspace{10pt}
+    \begin{Verbatim}
+>>> print("Python")
+Python
+>>> print("\tPython")
+    Python
+    \end{Verbatim}
+\end{frame}
+
+
+\begin{frame}[fragile]{Adding whitespace to strings with tabs or newlines (II)}{newline}
+    To add a newline to your text, use the character combination \verb|\n|:
+    \vspace{15pt}
+    \begin{Verbatim}
+>>> print("Languages:\nPython\nC\nJavaScript")
+Languages:
+Python
+C
+JavaScript
+    \end{Verbatim}
+\end{frame}
+
+
+\begin{frame}[fragile]{Adding whitespace to strings with tabs or newlines (III)}{Combining tabs and newlines}
+    \begin{itemize}[label=--]
+        \item You can also combine tabs and newlines in a single string.
+        \item The string \verb|"\n\t"| tells Python to move to a new line, and start the next line with a tab.
+    \end{itemize}
+    \vspace{15pt}
+    \begin{Verbatim}
+>>> print("Languages:\n\tPython\n\tC\n\tJavaScript")
+Languages:
+    Python
+    C
+    JavaScript
+    \end{Verbatim}
+\end{frame}
+
+
+\begin{frame}{Stripping whitespace (I)}
+    \begin{itemize}[label=--]
+        \item Extra whitespace can be confusing in your programs.
+        \item To programmers, \texttt{'python'} and \texttt{'python '} look pretty much the same.
+        \item But to a program, they are two different strings.
+        \item Python detects the extra space in \texttt{'python '} and considers it significant unless you tell it otherwise.
+        \item It's important to think about whitespace, because often you'll want to compare two strings to determine whether they are the same.
+        \item For example, when checking people's usernames when they log in to a website.
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame}[fragile]{Stripping whitespace (II)}
+    To ensure that no whitespace exists at the right end of a string, use the \texttt{rstrip()} method.
+    \vspace{10pt}
+    \begin{Verbatim}
+>>> favorite_language = 'python '
+>>> favorite_language
+'python '
+>>> favorite_language.rstrip()
+'python'
+>>> favorite_language
+'python '
+    \end{Verbatim}
+\end{frame}
+
+
+\begin{frame}[fragile]{Stripping whitespace (III)}
+    To remove the whitespace from the string permanently, you have to associate the stripped value with the variable name:
+    \vspace{10pt}
+    \begin{Verbatim}
+>>> favorite_language = 'python '
+>>> favorite_language = favorite_language.rstrip()
+>>> favorite_language
+'python'
+    \end{Verbatim}
+\end{frame}
+
+
+\begin{frame}[fragile]{Stripping whitespace (IV)}
+    You can also strip whitespace from the left side of a string using the \texttt{lstrip()} method, or from both sides at once using \texttt{strip()}:
+    \vspace{10pt}
+    \begin{Verbatim}
+>>> favorite_language = ' python '
+>>> favorite_language.rstrip()
+' python'
+>>> favorite_language.lstrip()
+'python '
+>>> favorite_language.strip()
+'python'
+    \end{Verbatim}
+\end{frame}
+
+
+\begin{frame}[fragile]{Avoiding syntax errors with strings (I)}
+    A \textbf{syntax error} occurs when Python doesn't recognize a section of your program as valid Python code. \\
+    \vspace{15pt}
+    For example, if you use an apostrophe within singles quotes, you'll produce an error. \\
+    \vspace{10pt}
+    This happens because Python interprets everything between the first single quote and the apostrophe as a string. \\
+    \vspace{10pt}
+    It then tries to interpret the rest of the text as Python code, which causes errors.
+\end{frame}
+
+
+\begin{frame}[fragile]{Avoiding syntax errors with strings (II)}
+    Here's how to use single and double quotes correctly.
+    Save this program as \textit{apostrophe.py} and then run it:
+    \vspace{10pt}
+    \begin{Verbatim}
+message = "One of Python's strengths is its diverse community."
+print(message)
+    \end{Verbatim}
+    \vspace{15pt}
+    The apostrophe appears inside a set of double quotes, so the Python interpreter has no trouble reading the string correctly:
+    \vspace{10pt}
+    \begin{Verbatim}
+One of Python's strengths is its diverse community.
+    \end{Verbatim}
+\end{frame}
+
+
+\begin{frame}[fragile]{Avoiding syntax errors with strings (III)}
+    However, if you use single, quotes, Python can't identify where the string should end:
+    \vspace{10pt}
+    \begin{Verbatim}
+message = 'One of Python's strengths is its diverse community.'
+print(message)
+    \end{Verbatim}
+    \vspace{15pt}
+    You'll see the following output:
+    \vspace{10pt}
+    \begin{Verbatim}[fontsize=\footnotesize]
+  File "/Users/cubby/code/work/cs-class/apostrophe.py", line 1
+    message = 'One of Python's strengths is its diverse community.'
+                             ^
+SyntaxError: invalid syntax
+    \end{Verbatim}
+\end{frame}
+
+
+\begin{frame}{Try It Yourself (I)}
+    \textbf{personal\_message.py} \\
+    Use a variable to represent a person’s name, and print a message to that person.
+    Your message should be simple, such as, ``Hello Eric, would you like to learn some Python today?'' \\
+    \vspace{10pt}
+    \textbf{name\_cases.py} \\
+    Use a variable to represent a person’s name, and then print that person’s name in lowercase, uppercase, and title case. \\
+    \vspace{10pt}
+    \textbf{famous\_quote\_1.py} \\
+    Find a quote from a famous person you admire.
+    Print the quote and the name of its author.
+    Your output should look something like the following, including the quotation marks: \\
+    \textit{Albert Einstein once said, ``A person who never made a mistake never tried anything new.''} \\
+\end{frame}
+
+
+\begin{frame}[fragile]{Try It Yourself (II)}
+    \textbf{famous\_quote\_2.py} \\
+    Repeat \textit{famous\_quote\_1.py}, but this time, represent the famous person’s name using a variable called \texttt{famous\_person}.
+    Then compose your message and represent it with a new variable called \texttt{message}.
+    Print your message. \\
+    \vspace{10pt}
+    \textbf{stripping\_names.py} \\
+    Use a variable to represent a person’s name, and include some whitespace characters at the beginning and end of the name.
+    Make sure you use each character combination, \verb|\t| and \verb|\n|, at least once. \\
+    \vspace{5pt}
+    Print the name once, so the whitespace around the name is displayed. Then print the name using each of the three stripping functions, \texttt{lstrip()}, \texttt{rstrip()}, and \texttt{strip()}.
+\end{frame}
+
+
+\end{document}
