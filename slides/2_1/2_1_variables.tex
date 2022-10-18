@@ -1,0 +1,190 @@
+\documentclass[aspectratio=169]{beamer}
+% Themes ---------------------------------------------------------------------
+\usetheme{default}
+\usefonttheme{professionalfonts}
+% Packages -------------------------------------------------------------------
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{stmaryrd}
+\usepackage[most]{tcolorbox}
+\usepackage{booktabs}
+\usepackage{import}
+\usepackage{adjustbox}
+\usepackage{MnSymbol}
+\usepackage{fancyvrb}
+% Tables ---------------------------------------------------------------------
+\renewcommand{\arraystretch}{1.3}
+% enumitem -------------------------------------------------------------------
+\setlist{itemsep=10pt}
+% beamer ---------------------------------------------------------------------
+\setbeamerfont{caption}{size=\small}
+% Title & author -------------------------------------------------------------
+\title{2.1 Variables}
+\subtitle{Variables and Simple Data Types}
+\author{Jakob Wells}
+
+\begin{document}
+\date{\today}
+
+
+\begin{frame}
+    \titlepage{}
+\end{frame}
+
+
+\begin{frame}[fragile]{A variable in \texttt{hello\_world.py} (I)}
+    Let's try using a variable in \texttt{hello\_world.py}.
+    Add a new line at the beginning of the file, and modify the second line:
+    \vspace{10pt}
+    \begin{Verbatim}
+message = "Hello Python world!"
+print(message)
+    \end{Verbatim}
+    \vspace{10pt}
+    Run this program to see what happens.
+    You should see the same output you saw previously:
+    \begin{Verbatim}
+Hello Python world!
+    \end{Verbatim}
+    \vspace{10pt}
+    We've added a \textit{variable} named \texttt{message}.
+    Every variable is connected to a \textit{value}, which is the information associated with that variable. \\
+    \vspace{10pt}
+    In this case the value is the \texttt{"Hello Python world!"} text.
+\end{frame}
+
+
+\begin{frame}[fragile]{A variable in \texttt{hello\_world.py} (II)}
+    Adding a variable makes  a little more work for the Python interpreter. \\
+    \vspace{10pt}
+    When it processes the first line, it associates the variable \texttt{message} with the \texttt{"Hello Python world!"} text.
+    When it reaches the second line, it prints the value associated with \texttt{message} to the screen. \\
+    \vspace{10pt}
+    Let's expand on this program by modifying \textit{hello\_world.py} to print a second message.
+    Add a blank line to \textit{hello\_world.py}, and then add two lines of code: \\
+    \vspace{10pt}
+    \begin{Verbatim}
+message = "Hello Python world!"
+print(message)
+
+message = "Hello Python Crash Course world!"
+print(message)
+    \end{Verbatim}
+\end{frame}
+
+
+\begin{frame}[fragile]{A variable in \texttt{hello\_world.py} (III)}
+    Now when we run \textit{hello\_world.py}, we see two lines of output:
+    \vspace{10pt}
+    \begin{Verbatim}
+Hello Python world!
+Hello Python Crash Course world!
+    \end{Verbatim}
+    \vspace{10pt}
+    We can change the value of a variable in a program at any time, and Python will always keep track of its current value.
+\end{frame}
+
+
+\begin{frame}{Naming and using variables (I)}
+    When using variables in Python, we need to follow a few rules and guidelines. \\
+    \vspace{10pt}
+    Breaking some of these rules will cause errors; other guidelines just help you write code that's easier to read and understand.
+    \vspace{10pt}
+    \begin{itemize}[label=--]
+        \item Variable names can contain only letters, numbers, and underscores.
+            \begin{itemize}[label=\(\blacktriangleright\),itemsep=5pt]
+                \item They can start with a letter or an underscore, but not with a number.
+                \item For instance, you can call a variable \texttt{message\_1} but not \texttt{1\_message}.
+            \end{itemize}
+        \item Spaces are not allowed in variable names, but underscores can be used to separate words in variables names.
+            \begin{itemize}[label=\(\blacktriangleright\),itemsep=5pt]
+                \item For Example, \texttt{greeting\_message} works, but \texttt{greeting message} will cause errors.
+            \end{itemize}
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame}{Naming and using variables (II)}
+    \begin{itemize}[label=--]
+        \item Avoid using Python keywords and function names as variable names.
+            \begin{itemize}[label=\(\blacktriangleright\),itemsep=5pt]
+                \item That is, do not use words that Python has reserved for a particular programmatic purpose, such as the word \texttt{print}.
+            \end{itemize}
+        \item Variable names should be short, but descriptive.
+            \begin{itemize}[label=\(\blacktriangleright\),itemsep=5pt]
+                \item For example, \texttt{name} is better than \texttt{n}, \texttt{student\_name} is better than \texttt{s\_n}, and \texttt{name\_length} is better than \texttt{length\_of\_persons\_name}.
+                \item Be careful when using the lowercase letter \texttt{l} and the uppercase letter \texttt{O} because they could be confused with the numbers \texttt{1} and \texttt{0}.
+            \end{itemize}
+        \item For now, all your variables should be lowercase.
+            You won't get errors if you use uppercase letters, but uppercase letters in variable names have special meanings that we'll discuss later.
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame}[fragile]{Avoiding name errors when using variables (I)}
+    Enter the following code, including the misspelled word \texttt{mesage}:
+    \vspace{10pt}
+    \begin{Verbatim}
+message = "Hello Computer Science student!"
+print(mesage)
+    \end{Verbatim}
+    \vspace{10pt}
+    When an error occurs in your program, the Python interpreter does its best to help you figure out where the problem is. \\
+    \vspace{10pt}
+    The interpreter provides a traceback when a program cannot run successfully.
+    A \textbf{traceback} is a record of where the interpreter ran into trouble when trying to execute the code.
+\end{frame}
+
+
+\begin{frame}[fragile]{Avoiding name errors when using variables (II)}
+    Here's an example of the traceback that Python provides after you've accidentally misspelled a variable's name:
+    \vspace{10pt}
+    \begin{Verbatim}
+Traceback (most recent call last):
+  File "hello_world.py", line 2, in <module>
+    print(mesage)
+NameError: name 'mesage' is not defined
+    \end{Verbatim}
+    \vspace{10pt}
+    In this case it found a \textbf{name error} and reports that the variable being printed, \texttt{mesage}, has not been defined.
+    Python can't identify the variable name provided. \\
+    \vspace{10pt}
+    A name error usually means we either forgot to set a variable's value before using it, or we made a spelling mistake when entering the variable's name.
+\end{frame}
+
+
+\begin{frame}[fragile]{Avoiding name errors when using variables (III)}
+    The Python interpreter doesn't spellcheck your code, but it does ensure that variable names are spelled consistently. \\
+    \vspace{10pt}
+    For example, watch what happens when we spell \textit{message} incorrectly in another place in the code as well:
+    \begin{Verbatim}
+mesage = "Hello Computer Science student!"
+print(mesage)
+    \end{Verbatim}
+    \vspace{10pt}
+    In this case, the program runs successfully!
+    \vspace{10pt}
+    \begin{Verbatim}
+Hello Computer Science student!
+    \end{Verbatim}
+\end{frame}
+
+
+\begin{frame}{Variables are labels}
+    It's best to think of variables as labels that you can assign to values. \\
+    \vspace{15pt}
+    You can also say that a variable references a certain value.
+\end{frame}
+
+
+\begin{frame}{Try It Yourself}
+    \textbf{simple\_message\_1.py} \\
+    Assign a message to a variable, and then print that message. \\
+    \vspace{15pt}
+    \textbf{simple\_message\_2.py} \\
+    Assign a message to a variable, and print that message.
+    Then change the value of the variable to a new message, and print the new message.
+\end{frame}
+
+
+\end{document}
