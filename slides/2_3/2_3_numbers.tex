@@ -1,0 +1,192 @@
+\documentclass[aspectratio=169]{beamer}
+% themes ---------------------------------------------------------------------
+\usetheme{default}
+\usefonttheme{professionalfonts}
+% packages -------------------------------------------------------------------
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{stmaryrd}
+\usepackage[most]{tcolorbox}
+\usepackage{booktabs}
+\usepackage{import}
+\usepackage{adjustbox}
+\usepackage{fancyvrb}
+% tables ---------------------------------------------------------------------
+\renewcommand{\arraystretch}{1.3}
+% enumitem -------------------------------------------------------------------
+\setlist{itemsep=10pt}
+% beamer ---------------------------------------------------------------------
+\setbeamerfont{caption}{size=\small}
+% title & author -------------------------------------------------------------
+\title{2.3 Numbers}
+\subtitle{Variables and Simple Data Types}
+\author{Jakob Wells}
+
+\begin{document}
+\date{\today}
+
+
+\begin{frame}
+    \titlepage{}
+\end{frame}
+
+
+\begin{frame}[fragile]{Integers}
+    You can add (\texttt{+}), subtract (\texttt{-}), multiply (\texttt{*}), and divide (\texttt{/}) integers in Python.
+    \vspace{10pt}
+    \begin{verbatim}
+>>> 2 + 3
+5
+>>> 3 - 2
+1
+>>> 2 * 3
+6
+>>> 3 / 2
+1.5
+    \end{verbatim}
+    \vspace{25pt}
+    In a terminal session, Python simply returns the result of the operation.
+\end{frame}
+
+
+\begin{frame}[fragile]{Exponents}
+    Python uses two multiplication symbols (\texttt{**}) to represent exponents:
+    \vspace{10pt}
+    \begin{verbatim}
+>>> 3 ** 3
+27
+>>> 3 ** 3
+27
+>>> 10 ** 6
+1000000
+    \end{verbatim}
+\end{frame}
+
+
+\begin{frame}[fragile]{Order of operations}
+    Python supports the order of operations.
+    \vspace{10pt}
+    \begin{verbatim}
+>>> 2 + 3 * 4
+14
+>>> (2 + 3) * 4
+20
+>>>
+    \end{verbatim}
+    \vspace{25pt}
+    You can also use parentheses to modify the order of operations.
+\end{frame}
+
+
+\begin{frame}[fragile]{Floats (I)}
+    Python calls any number with a decimal point a \textbf{float}.
+    \vspace{10pt}
+    \begin{verbatim}
+>>> 0.1 + 0.1
+0.2
+>>> 0.2 + 0.2
+0.4
+>>> 2 * 0.1
+0.2
+>>> 2 * 0.2
+0.4
+    \end{verbatim}
+\end{frame}
+
+
+\begin{frame}[fragile]{Floats (II)}
+    But be aware that you can sometimes get an arbitrary number of decimal places in your answer:
+    \vspace{10pt}
+    \begin{verbatim}
+>>> 0.2 + 0.1
+0.30000000000000004
+>>> 3 * 0.1
+0.30000000000000004
+    \end{verbatim}
+    \vspace{25pt}
+    Don't worry about this.
+\end{frame}
+
+
+\begin{frame}[fragile]{Integers and floats (I)}
+    When you divide any two numbers, even if they are integers that result in a whole number, you’ll always get a float:
+    \vspace{10pt}
+    \begin{verbatim}
+>>> 4 / 2
+2.0
+    \end{verbatim}
+\end{frame}
+
+
+\begin{frame}[fragile]{Integers and floats (II)}
+    If you mix an integer and a float in any other operation, you’ll get a float as well:
+    \vspace{10pt}
+    \begin{verbatim}
+>>> 1 + 2.0
+3.0
+>>> 2 * 3.0
+6.0
+>>> 3.0 ** 2
+9.0
+    \end{verbatim}
+    \vspace{15pt}
+    Python defaults to a float in any operation that uses a float, even if the output is a whole number.
+\end{frame}
+
+
+\begin{frame}[fragile]{Underscores in numbers}
+    When you’re writing long numbers, you can group digits using underscores to make large numbers more readable:
+    \vspace{10pt}
+    \begin{verbatim}
+>>> universe_age = 14_000_000_000
+    \end{verbatim}
+    \vspace{10pt}
+    When you print a number that was defined using underscores, Python prints only the digits:
+    \vspace{10pt}
+    \begin{verbatim}
+>>> print(universe_age)
+14000000000
+    \end{verbatim}
+\end{frame}
+
+
+\begin{frame}[fragile]{Multiple assignment}
+    You can assign values to more than one variable using just a single line.
+    For example, here’s how you can initialize the variables x, y, and z to zero:
+    \vspace{10pt}
+    \begin{verbatim}
+>>> x, y, z = 0, 0, 0
+    \end{verbatim}
+    \vspace{15pt}
+    Python defaults to a float in any operation that uses a float, even if the output is a whole number.
+\end{frame}
+
+
+\begin{frame}[fragile]{Constants}
+    A \textbf{constant} is like a variable whose value stays the same throughout the life of a program.
+    Python programmers use all capital letters to indicate a variable should be treated as a constant and never be changed:
+    \vspace{10pt}
+    \begin{verbatim}
+MAX_CONNECTIONS = 5000
+    \end{verbatim}
+\end{frame}
+
+
+\begin{frame}[fragile]{classwork\_04}
+    \textbf{number\_eight.py} \\
+    Write addition, subtraction, multiplication, and division operations that each result in the number 8.
+    Be sure to enclose your operations in \texttt{print()} calls to see the results.
+    You should create four lines that look like this: \\
+    \vspace{10pt}
+    \texttt{ print(5 + 3)}\\
+    \vspace{10pt}
+    Your output should simply be four lines with the number 8 appearing once on each line. \\
+    \vspace{10pt}
+    \textbf{favorite\_number.py} \\
+    Use a variable to represent your favorite number.
+    Then, using that variable, create a message that reveals your favorite number.
+    Print that message.
+\end{frame}
+
+
+\end{document}
