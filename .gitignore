@@ -274,3 +274,12 @@ TSWLatexianTemp*
 
 # Makeindex log files
 *.lpz
+/classwork/classwork_05/classwork_05.pdf
+/classwork/pop_check_01/pop_check_01_soln.pdf
+/slides/1_1/1_1_why_python.pdf
+/slides/1_2/1_2_setting_up_env.pdf
+/slides/1_3/1_3_hello_world.pdf
+/slides/2_1/2_1_variables.pdf
+/slides/2_2/2_2_strings.pdf
+/slides/2_3/2_3_numbers.pdf
+/slides/ch_3/ch_3_introducing_lists.pdf
