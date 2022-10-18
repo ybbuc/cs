@@ -1,0 +1,166 @@
+\documentclass[aspectratio=169]{beamer}
+% themes ---------------------------------------------------------------------
+\usetheme{default}
+\usefonttheme{professionalfonts}
+% packages -------------------------------------------------------------------
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{stmaryrd}
+\usepackage[most]{tcolorbox}
+\usepackage{booktabs}
+\usepackage{import}
+\usepackage{adjustbox}
+\usepackage{fancyvrb}
+% tables ---------------------------------------------------------------------
+\renewcommand{\arraystretch}{1.3}
+% enumitem -------------------------------------------------------------------
+\setlist{itemsep=10pt}
+% beamer ---------------------------------------------------------------------
+\setbeamerfont{caption}{size=\small}
+% title & author -------------------------------------------------------------
+\title{Chapter 3 Introducing Lists}
+\author{Jakob Wells}
+
+\begin{document}
+\date{\today}
+
+
+\begin{frame}
+    \titlepage{}
+\end{frame}
+
+
+\begin{frame}[fragile]{Lists (I)}
+    \begin{itemize}[label=--,itemsep=15pt]
+        \item A \textbf{list} is a collection of items in a particular order.
+        \item You can make a list that includes the letters of the alphabet, the digits from 0 to 9, or the names of all the people in your family.
+        \item Because a list usually contains more than one element, it's a good idea to make the name of your list plural, such as \texttt{letters}, \texttt{digits}, or \texttt{names}.
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame}[fragile]{Lists (II)}
+    In Python, square brackets \texttt{[ ]} indicate a list, and individual elements in the list are separated by commas.
+    \vspace{15pt}
+    \begin{verbatim}
+animals = ['cat', 'dog', 'lizard', 'bird']
+print(animals)
+    \end{verbatim}
+\end{frame}
+
+
+\begin{frame}[fragile]{Accessing elements in a list (I)}
+    \begin{itemize}[label=--,itemsep=15pt]
+        \item Lists are ordered collections, so you can access any element in a list by telling Python the position, or index, of the item desired.
+        \item To access an element in a list, write the name of the list followed by the index of the item enclosed in square brackets.
+    \end{itemize}
+    \vspace{15pt}
+    \begin{verbatim}
+animals = ['cat', 'dog', 'lizard', 'bird']
+print(animals[0])
+    \end{verbatim}
+\end{frame}
+
+
+\begin{frame}[fragile]{Accessing elements in a list (II)}
+    \begin{itemize}[label=--,itemsep=15pt]
+        \item You can also use the string methods from Chapter 2 on any element in this list.
+        \item For example, you can format the element \texttt{'cat'} more neatly by using the \texttt{title()} method:
+    \end{itemize}
+    \vspace{15pt}
+    \begin{verbatim}
+animals = ['cat', 'dog', 'lizard', 'bird']
+print(animals[0].title())
+    \end{verbatim}
+\end{frame}
+
+
+\begin{frame}[fragile]{Index positions start at 0, not 1}
+    \begin{itemize}[label=--,itemsep=15pt]
+        \item Python considers the first item in a list to be at position 0, not position 1.
+        \item The second item in a list has an index of 1.
+        \item Using this counting system, you can get any element you want from a list by subtracting one from its position in the list. 
+    \end{itemize}
+    \vspace{15pt}
+    \begin{verbatim}
+animals = ['cat', 'dog', 'lizard', 'bird']
+print(animals[1])
+print(animals[3])
+    \end{verbatim}
+\end{frame}
+
+
+\begin{frame}[fragile]{Accessing the last element (I)}
+    \begin{itemize}[label=--,itemsep=15pt]
+        \item Python has a special syntax for accessing the last element in a list.
+        \item This is useful because you’ll often want to access the last items in a list without knowing exactly how long the list is.
+    \end{itemize}
+    \vspace{15pt}
+    \begin{verbatim}
+animals = ['cat', 'dog', 'lizard', 'bird']
+print(animals[-1])
+    \end{verbatim}
+\end{frame}
+
+
+\begin{frame}[fragile]{Accessing the last element (II)}
+    \begin{itemize}[label=--,itemsep=15pt]
+        \item The index -2 returns the second item from the end of the list, the index -3 returns the third item from the end, and so forth.
+        \item By asking for the item at index \texttt{-1}, Python always returns the last item in the list.
+    \end{itemize}
+    \vspace{15pt}
+    \begin{table}
+    \centering
+        \begin{tabular}{rcccc}
+                                    & \texttt{'cat'} & \texttt{'dog'} & \texttt{'lizard'} & \texttt{'bird'} \\
+            \textbf{index}          & 0              & 1              & 2                 & 3               \\
+            \textbf{negative index} & -4             & -3             & -2                & -1              \\
+        \end{tabular}
+    \end{table}   
+\end{frame}
+
+
+\begin{frame}[fragile]{Using individual values from a list}
+    \begin{itemize}[label=--,itemsep=15pt]
+        \item We can use f-strings to create a message based on a value from a list.
+    \end{itemize}
+    \vspace{15pt}
+    \begin{verbatim}
+animals = ['cat', 'dog', 'lizard', 'bird']
+message = f"My first pet was a {animals[0]}."
+
+print(message)
+    \end{verbatim}
+\end{frame}
+
+
+\begin{frame}[fragile]{classwork\_05}
+    \textbf{names.py} \\
+    Store the names of a few of your friends in a list called \texttt{names}.
+    Print each person’s name by accessing each element in the list, one at a time. \\
+    \vspace{10pt}
+    \textbf{greetings.py} \\
+    Start with the list you used in names.py, but instead of just printing each person’s name, print a message to them.
+    The text of each message should be the same, but each message should be personalized with the person’s name. \\
+    \vspace{10pt}
+    \textbf{my\_list.py} \\
+    Think of your favorite mode of transportation, such as a motorcycle or a car, and make a list that stores several examples.
+    Use your list to print a series of statements about these items, such as ``\texttt{I would like to own a Honda motorcycle.}''
+\end{frame}
+
+
+\begin{frame}[fragile]{Modifying elements in a list}
+    \begin{itemize}[label=--,itemsep=15pt]
+        \item We can use f-strings to create a message based on a value from a list.
+    \end{itemize}
+    \vspace{15pt}
+    \begin{verbatim}
+animals = ['cat', 'dog', 'lizard', 'bird']
+message = f"My first pet was a {animals[0]}."
+
+print(message)
+    \end{verbatim}
+\end{frame}
+
+
+\end{document}
