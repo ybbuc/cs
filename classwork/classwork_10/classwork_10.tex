@@ -1,0 +1,75 @@
+\documentclass[a4paper]{article}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage{menukeys}
+\onehalfspacing
+\begin{document}
+\textbf{\Huge Classwork 10} 
+\section{User input in Python}
+To get user input in Python, the command we use is \texttt{input()}.
+Store the result in a variable, and use it to your heart's content.
+Remember that the result you get from the user will be a string, even if they enter a number.
+For example:
+\begin{verbatim}
+name = input("Give me your name: ") 
+print("Your name is " + name)
+\end{verbatim}
+What this will print in the terminal (or the shell, whatever you are running Python in) will be:
+\begin{verbatim}
+>>> Give me your name: Michele
+Your name is Michele
+\end{verbatim}
+Only after the user presses the \keys{\return{}} key, does the program continue.
+\section{Manipulating strings (a few ways)}
+What we get from the \texttt{input()} function is a string.
+What can you do with it?
+\subsection{Make the string into a number}
+Let's say you are 100\% positive that the user entered a number.
+You can turn the string into an integer with the function \texttt{int()}.
+(In a later exercise or two or three there will be questions about what to do when the user does NOT enter a number and you try to do this; for now don't worry about that problem). \\
+Here is what this looks like:
+\begin{verbatim}
+age = input("Enter your age: ") 
+age = int(age)
+\end{verbatim}
+(or, if you want to be more compact with your code)
+\begin{verbatim}
+age = int(input("Enter your age: "))
+\end{verbatim}
+In both cases, \texttt{age} will hold a variable that is an integer, and now you can do math with it.
+(Note, you can also turn integers into strings exactly in the opposite way, using the \texttt{str()} function.)
+\clearpage
+\subsection{Do math with strings}
+What do I mean by that? I mean, if I want to combine (\textbf{concatenate} is the computer science word for this) strings, all I need to do is add them:
+\begin{verbatim}
+print("Were" + "wolf") 
+print("Door" + "man") 
+print("4" + "chan") 
+print(str(4) + "chan")
+\end{verbatim}
+The same works for multiplication:
+\begin{verbatim}
+print(4 * "test")
+\end{verbatim}
+but division and subtraction do not work like this.
+In terms of multiplication, the idea of multiplying two strings together is not well-defined.
+What does it mean to multiply two strings in the first place?
+However, it makes sense in a way to specify multiplying a string by a number---just repeat that string that number of times.
+Try this in your own program with all the arithmetic operations.
+\section{Exercise}
+Create a program that asks the user to enter their name and their age.
+Print out a message addressed to them that tells them the year that they will turn 100 years old.
+\textit{Note: for this exercise, the expectation is that you explicitly write out the year (and therefore be out of date the next year).}
+\subsection{Extras}
+These are not required.
+You'll do these if you're awesome.
+\begin{enumerate}
+    \item Ask for the current year and use that year in your calculation.
+    \item Add on to the previous program by asking the user for another number and printing out that many copies of the previous message. (Hint: order of operations exists in Python.)
+    \item Print out that many copies of the previous message on separate lines. (Hint: the string \verb|"\n"| is the same as pressing the \keys{\return{}} key.)
+\end{enumerate}
+\vspace{\stretch{1}}
+\fbox{\fbox{\parbox{0.9\textwidth}{\centering
+Note: do this in a file named \texttt{hundred\_years.py}}}}
+\end{document}
