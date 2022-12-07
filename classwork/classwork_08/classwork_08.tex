@@ -1,0 +1,94 @@
+\documentclass[a4paper,addpoints]{exam}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{setspace}
+\colorfillwithlines{}
+\pagestyle{headandfoot}
+\firstpageheader{CS + Robotics}{\textbf{Classwork 08}}{Working With Lists}
+\boxedpoints
+\pointsinmargin
+\onehalfspacing
+\begin{document}
+\makebox[0.5\textwidth]{Name:\enspace\hrulefill}
+\vspace{20pt}
+\begin{center}
+    You will find the answers to these questions in Chapter 4 of \textit{Python Crash Course}, pages 57--60.
+\end{center}
+\vspace{20pt}
+\textbf{Making numerical lists}
+\begin{questions}
+    \question What is ideal for storing sets of numbers in Python?
+    \begin{solutionorlines}[\stretch{1}]
+    \end{solutionorlines}
+
+    \vspace{15pt}
+    \textbf{Using the \texttt{range()} function}
+
+    \question What does the \texttt{range()} function allow us to do?
+    \begin{solutionorlines}[\stretch{1}]
+    \end{solutionorlines}
+
+    \question \textit{4-3 Counting to Twenty:} Use a \texttt{for} loop to print the numbers from \texttt{1} to \texttt{20}, inclusive.
+    \begin{solutionorlines}[\stretch{1}]
+    \end{solutionorlines}
+
+    \vspace{15pt}
+    \textbf{Using \texttt{range()} to make a list of numbers}
+
+    \question Which function can we use to convert the results of \texttt{range()} directly into a list?
+    \begin{solutionorlines}[1cm]
+        \texttt{list()}
+    \end{solutionorlines}
+
+    \question If we use the following range to create a list what would be the numbers in the list? \\
+    \texttt{range(2, 11, 3)}
+    \begin{solutionorlines}[1cm]
+        \texttt{2, 5, 8}
+    \end{solutionorlines}
+    
+    \question What range will create a list of odd numbers from 3 to 17?
+    \begin{solutionorlines}[1cm]
+        \texttt{range(3, 17, 2)}
+    \end{solutionorlines}
+    \clearpage
+
+    \question A number raised to the third power is called a cube. For example, the cube of 2 is written as \texttt{2**3} in Python.
+    Make a list of the first 10 cubes (that is, the cube of each integer from 1 through 10), and use a \texttt{for} loop to print out the value of each cube.
+    \begin{solutionorlines}[7cm]
+    \end{solutionorlines}
+    
+
+    \textbf{Simple statistics with a list of numbers}
+
+    \question Consider the following list of numbers. Fill in the blanks below.
+    \begin{verbatim}
+numbers = [1, 4, 9, 16, 25]
+    \end{verbatim}
+    \begin{spacing}{2}
+        \texttt{min(numbers) = } \fillin[1][1cm] \\
+        \texttt{max(numbers) = } \fillin[25][1cm] \\
+        \texttt{sum(numbers) = } \fillin[55][1cm]
+    \end{spacing}
+    \vspace{15pt}
+
+
+    \textbf{List comprehensions}
+
+    \question \textit{4-9. Cube Comprehension:} Use a list comprehension to generate a list of the first 10 cubes.
+    \begin{solutionorlines}[2cm]
+    \end{solutionorlines}
+
+
+    \textbf{Slicing a List}
+    \question Consider the following list of students. Fill in the blanks below. \\
+    \texttt{students = ["mary", "jane", "haikun", "sandy", "james", "jeremy"]}
+    \begin{spacing}{2}
+        \texttt{students[0:2] = } \fillin[1][10cm] \\
+        \texttt{students[1:4] = } \fillin[25][10cm] \\
+        \texttt{students[:3] = } \fillin[55][10cm] \\
+        \texttt{students[3:] = } \fillin[55][10cm]
+    \end{spacing}
+    \vspace{15pt}
+
+\end{questions}
+\end{document}
